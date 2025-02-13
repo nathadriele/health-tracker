@@ -1,19 +1,17 @@
-'use strict';
-
 /**
  * Calcula o IMC com base no peso (kg) e altura (m).
- * @param {number} peso 
- * @param {number} altura 
- * @returns {number} IMC
+ * @param {number} peso
+ * @param {number} altura
+ * @returns {number}
  */
-const calcularIMC = (peso, altura) => peso / (altura * altura);
+export const calcularIMC = (peso, altura) => peso / (altura * altura);
 
 /**
  * Retorna a categoria do IMC.
- * @param {number} imc 
- * @returns {string} Categoria do IMC
+ * @param {number} imc
+ * @returns {string}
  */
-const obterCategoriaIMC = (imc) => {
+export const obterCategoriaIMC = (imc) => {
   if (imc < 18.5) return 'Abaixo do peso';
   if (imc < 24.9) return 'Peso normal';
   if (imc < 29.9) return 'Sobrepeso';
@@ -22,10 +20,10 @@ const obterCategoriaIMC = (imc) => {
 
 /**
  * Gera uma sugestão personalizada com base na categoria do IMC.
- * @param {string} categoria 
- * @returns {string} Sugestão
+ * @param {string} categoria
+ * @returns {string}
  */
-const gerarSugestao = (categoria) => {
+export const gerarSugestao = (categoria) => {
   switch (categoria) {
     case 'Abaixo do peso':
       return 'Procure um nutricionista para orientações sobre ganho de peso de forma saudável.';
