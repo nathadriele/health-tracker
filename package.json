@@ -1,13 +1,12 @@
 {
-    "name": "health-tracker",
-    "version": "1.0.0",
-    "description": "Aplicativo web para monitorar dados de saúde e calcular IMC",
-    "main": "index.js",
-    "scripts": {
-      "start": "live-server --port=8080"
-    },
-    "author": "Seu Nome",
-    "license": "MIT",
-    "dependencies": {}
-  }
-  
+  "name": "health-tracker",
+  "version": "1.0.0",
+  "description": "Aplicativo para monitorar dados de saúde e calcular IMC",
+  "main": "index.js",
+  "scripts": {
+    "start": "live-server --port=8080"
+  },
+  "author": "Seu Nome",
+  "license": "MIT",
+  "dependencies": {}
+}
