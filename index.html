@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Health Tracker</title>
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <!-- Chart.js CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Health Tracker</h1>
+    </header>
+
+    <main>
+      <!-- Formulário -->
+      <section id="formSection">
+        <form id="healthForm">
+          <div class="form-group">
+            <label for="nome">Nome:</label>
+            <input type="text" id="nome" name="nome" required>
+          </div>
+          <div class="form-group">
+            <label for="altura">Altura (m):</label>
+            <input type="number" id="altura" name="altura" step="0.01" min="0.1" required>
+          </div>
+          <div class="form-group">
+            <label for="peso">Peso (kg):</label>
+            <input type="number" id="peso" name="peso" step="0.1" min="0.1" required>
+          </div>
+          <div class="form-group">
+            <button type="submit">Calcular IMC</button>
+            <button type="button" id="clearHistory">Limpar Histórico</button>
+          </div>
+          <div class="error-message" id="errorMessage"></div>
+        </form>
+      </section>
+
+      <!-- Resultados -->
+      <section id="resultSection">
+        <div id="result">
+          <h2>Resultado</h2>
+          <p id="imcDisplay"></p>
+          <p id="suggestion"></p>
+        </div>
+      </section>
+
+      <!-- Gráfico -->
+      <section id="chartSection">
+        <div class="chart-container">
+          <canvas id="imcChart"></canvas>
+        </div>
+      </section>
+
+      <!-- Histórico de Registros -->
+      <section id="recordsSection">
+        <h2>Histórico de Registros</h2>
+        <table id="recordsTable">
+          <thead>
+            <tr>
+              <th>Data</th>
+              <th>Nome</th>
+              <th>IMC</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- Registros serão adicionados aqui -->
+          </tbody>
+        </table>
+      </section>
+    </main>
+  </div>
+
+  <!-- Scripts -->
+  <script src="assets/js/utils.js"></script>
+  <script src="assets/js/app.js"></script>
+</body>
+</html>
