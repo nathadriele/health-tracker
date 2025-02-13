@@ -29,3 +29,11 @@ health-tracker/
     └── js
         ├── utils.js
         └── app.js
+```
+
+### Teste Local 
+
+![image](https://github.com/user-attachments/assets/43b98d6e-3858-44db-9196-766e9721c3d7)
+
+![image](https://github.com/user-attachments/assets/1362b8d6-d424-480c-8a0d-f5f8e93704db)
+
