@@ -1,107 +1,127 @@
-/* Configurações básicas */
+:root {
+  --primary-color: #28a745;
+  --primary-color-hover: #218838;
+  --background-color: #f2f2f2;
+  --text-color: #333;
+  --border-color: #ccc;
+  --container-bg: #fff;
+}
+
 * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-  }
-  
-  body {
-    font-family: Arial, sans-serif;
-    background-color: #f2f2f2;
-    color: #333;
-    line-height: 1.6;
-  }
-  
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  line-height: 1.6;
+}
+
+.container {
+  width: 90%;
+  max-width: 800px;
+  margin: 2rem auto;
+  background: var(--container-bg);
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+header, main {
+  margin-bottom: 2rem;
+}
+
+h1, h2 {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.form-group {
+  margin-bottom: 1rem;
+}
+
+.form-group.buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+}
+
+input[type="text"],
+input[type="number"] {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+}
+
+input:focus,
+button:focus {
+  outline: 2px solid var(--primary-color);
+}
+
+button {
+  background-color: var(--primary-color);
+  color: #fff;
+  border: none;
+  padding: 0.7rem 1.2rem;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: var(--primary-color-hover);
+}
+
+.error-message {
+  color: red;
+  margin-top: 0.5rem;
+}
+
+#result {
+  margin-top: 1rem;
+  text-align: center;
+}
+
+.chart-container {
+  position: relative;
+  margin: auto;
+  height: 400px;
+  width: 100%;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+}
+
+table th,
+table td {
+  padding: 0.75rem;
+  border: 1px solid var(--border-color);
+  text-align: center;
+}
+
+@media (max-width: 600px) {
   .container {
-    width: 90%;
-    max-width: 800px;
-    margin: 2rem auto;
-    background: #fff;
-    padding: 2rem;
-    border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    padding: 1rem;
   }
-  
-  header, main {
-    margin-bottom: 2rem;
+
+  .form-group.buttons {
+    flex-direction: column;
   }
-  
-  h1, h2 {
-    text-align: center;
-    margin-bottom: 1rem;
-  }
-  
-  .form-group {
-    margin-bottom: 1rem;
-  }
-  
-  label {
-    display: block;
-    margin-bottom: 0.5rem;
-    font-weight: bold;
-  }
-  
-  input[type="text"],
-  input[type="number"] {
-    width: 100%;
-    padding: 0.5rem;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-  }
-  
+
   button {
-    background-color: #28a745;
-    color: #fff;
-    border: none;
-    padding: 0.7rem 1.2rem;
-    border-radius: 4px;
-    cursor: pointer;
-    margin-right: 0.5rem;
-  }
-  
-  button:hover {
-    background-color: #218838;
-  }
-  
-  .error-message {
-    color: red;
-    margin-top: 0.5rem;
-  }
-  
-  #result {
-    margin-top: 1rem;
-    text-align: center;
-  }
-  
-  .chart-container {
-    position: relative;
-    margin: auto;
-    height: 400px;
     width: 100%;
   }
-  
-  /* Estilização da tabela */
-  table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 1rem;
-  }
-  
-  table th, table td {
-    padding: 0.75rem;
-    border: 1px solid #ccc;
-    text-align: center;
-  }
-  
-  /* Responsividade */
-  @media (max-width: 600px) {
-    .container {
-      padding: 1rem;
-    }
-  
-    button {
-      width: 100%;
-      margin: 0.5rem 0;
-    }
-  }
-  
+}
