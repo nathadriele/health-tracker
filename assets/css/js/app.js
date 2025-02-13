@@ -1,7 +1,7 @@
-'use strict';
+import { calcularIMC, obterCategoriaIMC, gerarSugestao } from './utils.js';
 
 (() => {
-  // Seleção de elementos
+  // Seleção de elementos da interface
   const form = document.getElementById('healthForm');
   const imcDisplay = document.getElementById('imcDisplay');
   const suggestion = document.getElementById('suggestion');
@@ -10,10 +10,10 @@
   const recordsTableBody = document.querySelector('#recordsTable tbody');
   const ctx = document.getElementById('imcChart').getContext('2d');
 
-  // Recupera os registros salvos ou inicia com um array vazio
+  // Recupera os registros do localStorage ou inicia com um array vazio
   let imcRecords = JSON.parse(localStorage.getItem('imcRecords')) || [];
 
-  // Inicializa o gráfico
+  // Inicializa o gráfico do Chart.js com configurações responsivas
   const imcChart = new Chart(ctx, {
     type: 'line',
     data: {
@@ -27,6 +27,8 @@
       }]
     },
     options: {
+      responsive: true,
+      maintainAspectRatio: false,
       scales: {
         y: {
           beginAtZero: true,
@@ -53,7 +55,7 @@
   };
 
   /**
-   * Atualiza a tabela de registros.
+   * Atualiza a tabela de registros na interface.
    */
   const updateRecordsTable = () => {
     recordsTableBody.innerHTML = '';
@@ -68,10 +70,8 @@
     });
   };
 
-  // Atualiza a tabela ao carregar a página
   updateRecordsTable();
 
-  // Evento de submissão do formulário
   form.addEventListener('submit', (event) => {
     event.preventDefault();
     errorMessageEl.textContent = '';
@@ -80,7 +80,6 @@
     const altura = parseFloat(document.getElementById('altura').value);
     const peso = parseFloat(document.getElementById('peso').value);
 
-    // Validações dos campos
     if (!nome) {
       errorMessageEl.textContent = 'Por favor, insira seu nome.';
       return;
@@ -94,6 +93,7 @@
       return;
     }
 
+    // Calcula o IMC e determina a categoria
     const imc = calcularIMC(peso, altura);
     const categoria = obterCategoriaIMC(imc);
 
@@ -101,7 +101,6 @@
     imcDisplay.textContent = `Olá ${nome}, seu IMC é ${imc.toFixed(2)} (${categoria}).`;
     suggestion.textContent = gerarSugestao(categoria);
 
-    // Cria um registro com a data atual formatada
     const record = {
       nome,
       imc: parseFloat(imc.toFixed(2)),
@@ -116,7 +115,6 @@
     form.reset();
   });
 
-  // Evento para limpar todo o histórico de registros
   clearHistoryBtn.addEventListener('click', () => {
     if (confirm('Tem certeza que deseja limpar todo o histórico?')) {
       imcRecords = [];
