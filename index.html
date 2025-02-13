@@ -30,7 +30,7 @@
             <label for="peso">Peso (kg):</label>
             <input type="number" id="peso" name="peso" step="0.1" min="0.1" required>
           </div>
-          <div class="form-group">
+          <div class="form-group buttons">
             <button type="submit">Calcular IMC</button>
             <button type="button" id="clearHistory">Limpar Histórico</button>
           </div>
@@ -66,15 +66,13 @@
             </tr>
           </thead>
           <tbody>
-            <!-- Registros serão adicionados aqui -->
+            <!-- Os registros serão inseridos aqui via JavaScript -->
           </tbody>
         </table>
       </section>
     </main>
   </div>
 
-  <!-- Scripts -->
-  <script src="assets/js/utils.js"></script>
-  <script src="assets/js/app.js"></script>
+  <script type="module" src="assets/js/app.js"></script>
 </body>
 </html>
