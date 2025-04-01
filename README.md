@@ -1,5 +1,7 @@
 ## Health Tracker
 
+![image](https://github.com/user-attachments/assets/8b405050-8f36-4cc2-9852-7b31c0e26d42)
+
 Aplicação para monitorar dados de saúde, calcular o IMC, e visualizar a evolução de indicadores por meio de gráficos e histórico de registros.
 
 ### Funcionalidades
